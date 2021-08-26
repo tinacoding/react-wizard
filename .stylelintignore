@@ -1,0 +1,11 @@
+# dependencies
+/node_modules
+
+# public
+/public
+
+# testing
+/coverage
+
+# production
+/build
