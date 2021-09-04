@@ -1,4 +1,5 @@
 import { Grid, GridItem } from "@chakra-ui/react";
+import WizardContent from "src/components/Wizard/WizardContent";
 import WizardInstructions from "src/components/Wizard/WizardInstructions";
 
 function Wizard(): JSX.Element {
@@ -7,7 +8,9 @@ function Wizard(): JSX.Element {
       <GridItem colSpan={4} bg="green">
         <WizardInstructions />
       </GridItem>
-      <GridItem colSpan={5} bg="tomato" />
+      <GridItem colSpan={5} bg="tomato">
+        <WizardContent />
+      </GridItem>
     </Grid>
   );
 }
