@@ -1,4 +1,4 @@
-import { Box, Container, Grid, GridItem } from "@chakra-ui/react";
+import { Container, Grid, GridItem } from "@chakra-ui/react";
 import { useState } from "react";
 import WizardContent from "src/components/Wizard/WizardContent/WizardContent";
 import WizardInstructions from "src/components/Wizard/WizardInstructions";
@@ -29,22 +29,22 @@ function Wizard(): JSX.Element {
   };
   return (
     <Container paddingY="4" maxW="container.xl" h="100vh" overflowY="hidden">
-        <Grid templateColumns="repeat(9, 1fr)" gap={0}>
-          <GridItem colSpan={4} bg="purple.800" borderLeftRadius="lg">
-            <WizardInstructions />
-          </GridItem>
-          <GridItem colSpan={5} bg="gray.100" borderRightRadius="lg">
-            <WizardContent
-              next={next}
-              previous={previous}
-              currentStep={currentStep}
-              totalSteps={steps.length - 1}
-              title="Create Something"
-            >
-              <Content />
-            </WizardContent>
-          </GridItem>
-        </Grid>
+      <Grid templateColumns="repeat(9, 1fr)" gap={0}>
+        <GridItem colSpan={4} bg="purple.800" borderLeftRadius="lg">
+          <WizardInstructions />
+        </GridItem>
+        <GridItem colSpan={5} bg="gray.100" borderRightRadius="lg">
+          <WizardContent
+            next={next}
+            previous={previous}
+            currentStep={currentStep}
+            totalSteps={steps.length - 1}
+            title="Create Something"
+          >
+            <Content />
+          </WizardContent>
+        </GridItem>
+      </Grid>
     </Container>
   );
 }
