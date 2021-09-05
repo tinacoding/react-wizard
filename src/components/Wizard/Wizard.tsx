@@ -33,9 +33,15 @@ function Wizard(): JSX.Element {
         <WizardInstructions />
       </GridItem>
       <GridItem colSpan={5} bg="tomato">
-				<WizardContent currentStep={currentStep} totalSteps={steps.length} title="Create Something">
-					<Content />
-				</WizardContent>
+        <WizardContent
+          next={next}
+          previous={previous}
+          currentStep={currentStep}
+          totalSteps={steps.length}
+          title="Create Something"
+        >
+          <Content />
+        </WizardContent>
       </GridItem>
     </Grid>
   );
