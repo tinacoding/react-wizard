@@ -1,25 +1,23 @@
 import { Flex, Text, Progress } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
-type ProgressProps = { currentStep: number, totalSteps: number };
+type ProgressProps = { currentStep: number; totalSteps: number };
 function WizardProgress({ currentStep, totalSteps }: ProgressProps): JSX.Element {
-	const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-		if (totalSteps > 0) {
-			const percentage = parseFloat((currentStep / totalSteps).toPrecision()) * 100;
+    if (totalSteps > 0) {
+      const percentage = parseFloat((currentStep / totalSteps).toPrecision()) * 100;
       setProgress(percentage);
     }
   }, [currentStep, totalSteps]);
 
-	return (
-      <Progress value={progress} rounded="full" />
-  );
-	}
+  return <Progress value={progress} rounded="full" />;
+}
 
-type StepTitleProps = { title: string, currentStep: number, totalSteps: number };
+type StepTitleProps = { title: string; currentStep: number; totalSteps: number };
 function StepTitle({ title, currentStep, totalSteps }: StepTitleProps): JSX.Element {
-	return (
+  return (
     <Flex justifyContent="space-between" alignItems="center" py="4">
       <Text fontSize="sm" casing="uppercase" fontWeight="semibold">
         {title}
@@ -41,6 +39,4 @@ function WizardHeader({ currentStep, totalSteps, title }: WizardHeaderProps): JS
   );
 }
 
-
-
-export default WizardHeader
+export default WizardHeader;

@@ -13,7 +13,7 @@ describe("as a user, I want to see the first step of the wizard", () => {
   it("should render no progress on load", () => {
     render(<App />);
     const progress = screen.getByRole("progressbar");
-    expect(progress).toHaveStyle('width: 0%');
+    expect(progress).toHaveStyle("width: 0%");
   });
 });
 
@@ -37,8 +37,7 @@ describe("as a user, I want to step through the wizard", () => {
 
     expect(step1Txt).not.toBeInTheDocument();
     expect(step2Txt).toBeInTheDocument();
-    expect(progress).toHaveStyle('width: 100%');
-
+    expect(progress).toHaveStyle("width: 100%");
   });
   it("should render Step 1 on click back", () => {
     render(<App />);

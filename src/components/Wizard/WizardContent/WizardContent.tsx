@@ -3,12 +3,12 @@ import WizardFooter from "src/components/Wizard/WizardContent/WizardFooter";
 import WizardHeader from "src/components/Wizard/WizardContent/WizardHeader";
 
 type WizardContentProps = {
-  children: React.ReactNode,
-  title: string,
-  currentStep: number,
-  totalSteps: number,
-  previous: () => void,
-  next: () => void,
+  children: React.ReactNode;
+  title: string;
+  currentStep: number;
+  totalSteps: number;
+  previous: () => void;
+  next: () => void;
 };
 
 function WizardContent({ children, title, currentStep, totalSteps, previous, next }: WizardContentProps): JSX.Element {
@@ -22,7 +22,7 @@ function WizardContent({ children, title, currentStep, totalSteps, previous, nex
           {children}
         </GridItem>
         <GridItem rowSpan={1} colSpan={12} paddingY="2">
-          <WizardFooter previous={previous} next={next}  />
+          <WizardFooter previous={previous} next={next} />
         </GridItem>
       </Grid>
     </Container>

@@ -12,7 +12,7 @@ function Step2(): JSX.Element {
 }
 
 function Wizard(): JSX.Element {
-	const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
   const steps = [Step1, Step2];
   const Content = steps[currentStep];
 
@@ -38,9 +38,10 @@ function Wizard(): JSX.Element {
           previous={previous}
           currentStep={currentStep}
           totalSteps={steps.length - 1}
-          title="Create Something">
-					<Content />
-				</WizardContent>
+          title="Create Something"
+        >
+          <Content />
+        </WizardContent>
       </GridItem>
     </Grid>
   );
