@@ -37,11 +37,10 @@ function Wizard(): JSX.Element {
           next={next}
           previous={previous}
           currentStep={currentStep}
-          totalSteps={steps.length}
-          title="Create Something"
-        >
-          <Content />
-        </WizardContent>
+          totalSteps={steps.length - 1}
+          title="Create Something">
+					<Content />
+				</WizardContent>
       </GridItem>
     </Grid>
   );

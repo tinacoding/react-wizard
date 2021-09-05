@@ -7,7 +7,7 @@ function WizardProgress({ currentStep, totalSteps }: ProgressProps): JSX.Element
 
   useEffect(() => {
 		if (totalSteps > 0) {
-			const percentage = parseInt((currentStep / (totalSteps)).toPrecision(), 10) * 100;
+			const percentage = parseFloat((currentStep / totalSteps).toPrecision()) * 100;
       setProgress(percentage);
     }
   }, [currentStep, totalSteps]);
