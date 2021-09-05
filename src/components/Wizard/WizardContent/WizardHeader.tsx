@@ -1,4 +1,4 @@
-import { Flex, Progress, Text } from "@chakra-ui/react";
+import { Flex, Text, Progress } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 type ProgressProps = { currentStep: number, totalSteps: number };
@@ -13,18 +13,22 @@ function WizardProgress({ currentStep, totalSteps }: ProgressProps): JSX.Element
   }, [currentStep, totalSteps]);
 
 	return (
-		<Progress value={progress} />
-		)
+      <Progress value={progress} rounded="full" />
+  );
 	}
 
 type StepTitleProps = { title: string, currentStep: number, totalSteps: number };
 function StepTitle({ title, currentStep, totalSteps }: StepTitleProps): JSX.Element {
 	return (
-		<Flex justifyContent="space-between" alignItems="center">
-			<Text fontSize="sm" casing='uppercase' fontWeight='semibold'>{title}</Text>
-			<Text fontSize="sm" casing='uppercase' fontWeight='semibold'>Step ${currentStep}/${totalSteps}</Text>
-		</Flex>
-	)
+    <Flex justifyContent="space-between" alignItems="center" py="4">
+      <Text fontSize="sm" casing="uppercase" fontWeight="semibold">
+        {title}
+      </Text>
+      <Text fontSize="sm" casing="uppercase" fontWeight="semibold">
+        Step {currentStep}/{totalSteps}
+      </Text>
+    </Flex>
+  );
 }
 
 type WizardHeaderProps = { title: string; currentStep: number; totalSteps: number };
