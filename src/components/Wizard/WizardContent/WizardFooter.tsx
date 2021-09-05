@@ -4,10 +4,10 @@ type Props = { previous: () => void; next: () => void };
 function WizardFooter({ previous, next }: Props): JSX.Element {
   return (
     <Flex alignItems="center" justifyContent="space-between">
-      <Button isFullWidth marginRight="12" colorScheme="gray" variant="solid" onClick={previous}>
+      <Button isFullWidth marginRight="12" colorScheme="gray" shadow="md" variant="solid" onClick={previous}>
         Back
       </Button>
-      <Button isFullWidth colorScheme="teal" variant="solid" onClick={next}>
+      <Button isFullWidth colorScheme="purple" variant="solid" shadow="md" onClick={next}>
         Next
       </Button>
     </Flex>

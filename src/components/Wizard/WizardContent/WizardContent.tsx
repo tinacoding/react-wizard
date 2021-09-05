@@ -13,12 +13,12 @@ type WizardContentProps = {
 
 function WizardContent({ children, title, currentStep, totalSteps, previous, next }: WizardContentProps): JSX.Element {
   return (
-    <Container maxW="xl" paddingX="8" paddingY="12">
+    <Container maxW="xl" paddingX="8" paddingY="12" color="blackAlpha.800">
       <Grid h="700px" w="100%" templateRows="repeat(6, 1fr)" templateColumns="repeat(12, 1fr)" gap={2}>
         <GridItem rowSpan={1} colSpan={12}>
           <WizardHeader currentStep={currentStep} title={title} totalSteps={totalSteps} />
         </GridItem>
-        <GridItem rowSpan={4} colSpan={12} bg="papayawhip">
+        <GridItem rowSpan={4} colSpan={12} padding="8">
           {children}
         </GridItem>
         <GridItem rowSpan={1} colSpan={12} paddingY="2">

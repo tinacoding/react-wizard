@@ -12,7 +12,7 @@ function WizardProgress({ currentStep, totalSteps }: ProgressProps): JSX.Element
     }
   }, [currentStep, totalSteps]);
 
-  return <Progress value={progress} rounded="full" />;
+  return <Progress value={progress} rounded="full" colorScheme="purple" />;
 }
 
 type StepTitleProps = { title: string; currentStep: number; totalSteps: number };

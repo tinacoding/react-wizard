@@ -2,7 +2,7 @@ import { Box, Container, Heading, Text } from "@chakra-ui/react";
 
 function WizardInstructions(): JSX.Element {
   return (
-    <Container maxW="xl" paddingX="8" paddingY="12">
+    <Container maxW="xl" paddingX="8" paddingY="12" color="white">
       <Box padding="4" maxW="3xl">
         <Heading as="h1" size="2xl" marginBottom="6">
           Step Instructions
