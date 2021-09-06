@@ -4,7 +4,8 @@ type SideEffect = () => void;
 
 const initialState = {
   currentStep: 0,
-  totalSteps: 0,
+	steps: [] as (() => JSX.Element)[],
+	totalSteps: 0,
   previous: (() => null) as SideEffect,
   next: (() => null) as SideEffect,
 };
@@ -29,7 +30,7 @@ export function WizardProvider({ children, steps }: WizardProviderProps): JSX.El
   }, [currentStep, steps]);
 
   return (
-    <WizardContext.Provider value={{ currentStep, totalSteps: steps.length, previous, next }}>
+    <WizardContext.Provider value={{ currentStep, steps, totalSteps: steps.length, previous, next }}>
       {children}
     </WizardContext.Provider>
   );

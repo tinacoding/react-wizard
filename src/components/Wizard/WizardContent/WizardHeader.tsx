@@ -1,8 +1,9 @@
 import { Flex, Text, Progress } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { WizardContext } from "src/context/WizardContext";
 
-type ProgressProps = { currentStep: number; totalSteps: number };
-function WizardProgress({ currentStep, totalSteps }: ProgressProps): JSX.Element {
+function WizardProgress(): JSX.Element {
+  const { currentStep, totalSteps } = useContext(WizardContext);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -15,8 +16,9 @@ function WizardProgress({ currentStep, totalSteps }: ProgressProps): JSX.Element
   return <Progress value={progress} rounded="full" colorScheme="purple" />;
 }
 
-type StepTitleProps = { title: string; currentStep: number; totalSteps: number };
-function StepTitle({ title, currentStep, totalSteps }: StepTitleProps): JSX.Element {
+type StepTitleProps = { title: string };
+function StepTitle({ title }: StepTitleProps): JSX.Element {
+  const { currentStep, totalSteps } = useContext(WizardContext)
   return (
     <Flex justifyContent="space-between" alignItems="center" py="4">
       <Text fontSize="sm" casing="uppercase" fontWeight="semibold">
@@ -29,12 +31,12 @@ function StepTitle({ title, currentStep, totalSteps }: StepTitleProps): JSX.Elem
   );
 }
 
-type WizardHeaderProps = { title: string; currentStep: number; totalSteps: number };
-function WizardHeader({ currentStep, totalSteps, title }: WizardHeaderProps): JSX.Element {
+type WizardHeaderProps = { title: string };
+function WizardHeader({ title }: WizardHeaderProps): JSX.Element {
   return (
     <div>
-      <StepTitle currentStep={currentStep} totalSteps={totalSteps} title={title} />
-      <WizardProgress currentStep={currentStep} totalSteps={totalSteps} />
+      <StepTitle title={title} />
+      <WizardProgress />
     </div>
   );
 }

@@ -18,7 +18,7 @@ function Wizard(): JSX.Element {
             <WizardContent
               title="Create Something"
             />
-        </WizardProvider>
+          </WizardProvider>
         </GridItem>
       </Grid>
     </Container>
