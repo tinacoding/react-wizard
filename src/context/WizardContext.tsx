@@ -30,7 +30,7 @@ export function WizardProvider({ children, steps }: WizardProviderProps): JSX.El
   }, [currentStep, steps]);
 
   return (
-    <WizardContext.Provider value={{ currentStep, steps, totalSteps: steps.length, previous, next }}>
+    <WizardContext.Provider value={{ currentStep, steps, totalSteps: steps.length - 1, previous, next }}>
       {children}
     </WizardContext.Provider>
   );
