@@ -11,7 +11,7 @@ const initialState = {
 
 export const WizardContext = createContext(initialState);
 
-type WizardProviderProps = { children: React.ReactNode; steps: JSX.Element[] };
+type WizardProviderProps = { children: React.ReactNode; steps: (() => JSX.Element)[] };
 
 export function WizardProvider({ children, steps }: WizardProviderProps): JSX.Element {
   const [currentStep, setCurrentStep] = useState(0);
