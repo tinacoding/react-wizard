@@ -4,8 +4,8 @@ type SideEffect = () => void;
 
 const initialState = {
   currentStep: 0,
-	steps: [] as (() => JSX.Element)[],
-	totalSteps: 0,
+  steps: [] as (() => JSX.Element)[],
+  totalSteps: 0,
   previous: (() => null) as SideEffect,
   next: (() => null) as SideEffect,
 };

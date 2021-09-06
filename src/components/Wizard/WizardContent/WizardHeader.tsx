@@ -18,7 +18,7 @@ function WizardProgress(): JSX.Element {
 
 type StepTitleProps = { title: string };
 function StepTitle({ title }: StepTitleProps): JSX.Element {
-  const { currentStep, totalSteps } = useContext(WizardContext)
+  const { currentStep, totalSteps } = useContext(WizardContext);
   return (
     <Flex justifyContent="space-between" alignItems="center" py="4">
       <Text fontSize="sm" casing="uppercase" fontWeight="semibold">

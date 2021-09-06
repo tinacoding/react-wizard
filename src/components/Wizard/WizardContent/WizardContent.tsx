@@ -4,7 +4,7 @@ import WizardFooter from "src/components/Wizard/WizardContent/WizardFooter";
 import WizardHeader from "src/components/Wizard/WizardContent/WizardHeader";
 
 type WizardContentProps = {
-  title: string,
+  title: string;
 };
 
 function WizardContent({ title }: WizardContentProps): JSX.Element {

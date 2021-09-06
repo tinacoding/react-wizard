@@ -15,9 +15,7 @@ function Wizard(): JSX.Element {
         </GridItem>
         <GridItem colSpan={5} bg="gray.100" borderRightRadius="lg">
           <WizardProvider steps={steps}>
-            <WizardContent
-              title="Create Something"
-            />
+            <WizardContent title="Create Something" />
           </WizardProvider>
         </GridItem>
       </Grid>
